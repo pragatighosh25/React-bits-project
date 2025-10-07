@@ -9,7 +9,7 @@ import CardSwap, { Card } from "./components/CardSwap.jsx";
 
 function App() {
   return (
-    <div className="App relative min-h-screen overflow-hidden bg-black">
+    <div className="App flex flex-col min-h-screen relative overflow-hidden bg-black">
       {/* Navigation Bar */}
       <PillNav
         logo={logo}
@@ -23,10 +23,10 @@ function App() {
         activeHref="/"
         className="custom-nav z-20"
         ease="power2.easeOut"
-        baseColor="transparent"        // transparent nav background
-        pillColor="#ffffff"            // pill fill
+        baseColor="transparent"
+        pillColor="#ffffff"
         hoveredPillTextColor="#ffffff"
-        pillTextColor="#000000"        // pill text
+        pillTextColor="#000000"
       />
 
       {/* Background Animation */}
@@ -51,9 +51,9 @@ function App() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-16 gap-12">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 gap-12">
         {/* Left: Text + Button */}
-        <div className="flex flex-col items-start justify-center text-left max-w-lg">
+        <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left max-w-lg md:mr-auto">
           <TextType
             className="text-4xl md:text-6xl font-bold text-white mb-6"
             text={["Text typing effect", "for your websites", "Happy coding!"]}
@@ -66,20 +66,49 @@ function App() {
         </div>
 
         {/* Right: Card Animation */}
-        <div className="relative w-full md:w-auto flex justify-center">
-          <div style={{ width: "300px", height: "400px", position: "relative" }}>
-            <CardSwap cardDistance={60} verticalDistance={70} delay={5000} pauseOnHover={false}>
+        <div className="relative w-full md:w-auto flex justify-center md:justify-end mt-8 md:mt-0">
+          <div
+            style={{ width: "300px", height: "400px", position: "relative" }}
+          >
+            <CardSwap
+              cardDistance={50}
+              verticalDistance={65}
+              delay={3000}
+              pauseOnHover={false}
+            >
               <Card>
-                <h3>Card 1</h3>
-                <p>Your content here</p>
+                <h3 className="text-2xl font-bold mb-3 text-white">
+                  ✨ Crafted Interfaces
+                </h3>
+                <p className="text-gray-300">
+                  Every interaction, every hover state, and every transition is
+                  designed to make users *feel* the experience. From smooth
+                  scrolls to minimal layouts, I focus on blending creativity
+                  with usability — pixel-perfect, responsive, and built to
+                  impress.
+                </p>
               </Card>
               <Card>
-                <h3>Card 2</h3>
-                <p>Your content here</p>
+                <h3 className="text-2xl font-bold mb-3 text-white">
+                  ⚡ Frontend Wizardry
+                </h3>
+                <p className="text-gray-300">
+                  From React components to Three.js animations, I love turning
+                  design mockups into living, breathing web experiences.
+                  Performance, aesthetics, and motion come together to create
+                  seamless digital stories.
+                </p>
               </Card>
               <Card>
-                <h3>Card 3</h3>
-                <p>Your content here</p>
+                <h3 className="text-2xl font-bold mb-3 text-white">
+                  🎨 Design That Speaks
+                </h3>
+                <p className="text-gray-300">
+                  Great design tells a story. I design interfaces that connect
+                  emotionally — where color, typography, and movement work
+                  together to create a memorable visual language users actually
+                  *feel* drawn to.
+                </p>
               </Card>
             </CardSwap>
           </div>
