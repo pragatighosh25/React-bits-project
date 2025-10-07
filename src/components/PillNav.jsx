@@ -215,10 +215,10 @@ const PillNav = ({
   const isRouterLink = href => href && !isExternalLink(href);
 
   const cssVars = {
-    ['--base']: baseColor,
-    ['--pill-bg']: pillColor,
-    ['--hover-text']: hoveredPillTextColor,
-    ['--pill-text']: resolvedPillTextColor,
+    ['--base']: 'transparent',
+    ['--pill-bg']: '#ffffff',
+    ['--hover-text']: '#ffffff',
+    ['--pill-text']: '#000000',
     ['--nav-h']: '42px',
     ['--logo']: '36px',
     ['--pill-pad-x']: '18px',
@@ -286,8 +286,8 @@ const PillNav = ({
               const isActive = activeHref === item.href;
 
               const pillStyle = {
-                background: 'var(--pill-bg, #fff)',
-                color: 'var(--pill-text, var(--base, #000))',
+                background: 'var(--pill-bg)',
+                color: 'var(--pill-text)',
                 paddingLeft: 'var(--pill-pad-x)',
                 paddingRight: 'var(--pill-pad-x)'
               };
@@ -297,7 +297,7 @@ const PillNav = ({
                   <span
                     className="hover-circle absolute left-1/2 bottom-0 rounded-full z-[1] block pointer-events-none"
                     style={{
-                      background: 'var(--base, #000)',
+                      background: 'var(--base)',
                       willChange: 'transform'
                     }}
                     aria-hidden="true"
@@ -315,7 +315,7 @@ const PillNav = ({
                     <span
                       className="pill-label-hover absolute left-0 top-0 z-[3] inline-block"
                       style={{
-                        color: 'var(--hover-text, #fff)',
+                        color: 'var(--hover-text)',
                         willChange: 'transform, opacity'
                       }}
                       aria-hidden="true"
